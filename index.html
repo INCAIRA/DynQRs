@@ -50,11 +50,18 @@
     transform: rotate(360deg);
   }
 }
-
+/* Estilo para la imagen */
+      .my-image {
+        position: absolute;
+        top: 50%; /* Alinea la imagen verticalmente al centro */
+        left: 50%; /* Alinea la imagen horizontalmente al centro */
+        transform: translate(-50%, -50%); /* Centra la imagen correctamente */
+        z-index: 1; /* Coloca la imagen encima del texto */
+      }
   </style>
 </head>
 <body>
-    <img style="margin-top: 25px; src="8.png" alt="INCAIRA" width="300" height="300">
+    <img src="8.png" alt="INCAIRA" width="300" height="300" class="my-image">
     <p style="margin-top: 25px; color: white; font-size: 40px;">Bienvenido a INCAIRA.</p>
     <p style="margin-top: 25px; color: white; font-size: 30px;">Estamos preparando tu sorpresa, en unos segundos estará lista.</p>
   
