@@ -53,7 +53,7 @@
       padding-right: 10px;
       width: 0; /* Inicialmente sin ancho */
       animation: typing 2s steps(40) forwards, blink-border 1s step-end infinite;
-      box-sizing: border-box;
+      box-sizing: border-box; /* Asegura que el borde esté dentro del ancho */
     }
 
     /* Animación para que el texto se muestre como si se escribiera */
@@ -75,14 +75,27 @@
         border-color: #fff; /* Borde blanco en la mitad del tiempo */
       }
     }
+
+    /* Estilos para la imagen centrada */
+    .centered-image {
+      display: block;
+      margin: 0 auto; /* Centra horizontalmente la imagen */
+      max-width: 100%; /* Ajusta el ancho máximo de la imagen según el contenedor */
+      padding-top: 20px; /* Añade un espacio superior para separar la imagen del texto */
+    }
   </style>
 </head>
 <body>
   <div class="square"></div>
   <div class="text-container">
-    <!-- Texto que se mostrará como si se escribiera -->
+    <!-- Imagen centrada -->
+    <img src="8.png" alt="INCAIRA" width="300" height="300" class="centered-image">
+
+    <!-- Texto que se mostrará como si se escribiera en 2 segundos -->
     <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
   </div>
+</body>
+</html>
 
   <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxPhOXwhukaUo5RHu_9mihOcnusGRpwQXClT4xHWMlQuZBPs9GsFEZjzGmAQ_3COJwlUg/exec";
