@@ -104,7 +104,7 @@
     
     if (k) {
       // Aquí puedes definir la contraseña requerida
-      var password = "tucontraseña";
+      var password = "aa";
       
       // Pide la contraseña al usuario
       var userPassword = prompt("Por favor, ingresa la contraseña:");
@@ -121,7 +121,8 @@
           })
           .catch(err => console.log(err));
       } else {
-        alert("Contraseña incorrecta. El acceso está restringido.");
+        // Redirige a www.google.es en caso de contraseña incorrecta
+        window.location.href = "https://www.google.es";
       }
     }
   </script>
