@@ -47,7 +47,7 @@
       overflow: hidden;
       border-right: 2px solid #fff;
       padding-right: 10px;
-      width: 0; /* Inicialmente sin ancho */
+      width: 100%; /* Cambio el ancho a 100% para que aparezca completo */
       animation: typing 4s steps(40) forwards;
     }
 
@@ -60,29 +60,18 @@
       }
     }
 
+    /* Elimino el estilo del cursor */
     .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 36px;
-      background-color: #fff;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
+      display: none;
     }
   </style>
 </head>
 <body>
   <div class="square"></div>
   <div class="text-container">
-    <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.<span class="cursor"></span></p>
+    <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
   </div>
+
 
 
   <script>
