@@ -2,72 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Pantalla de Carga</title>
   <style>
-      body {
-        background-color: black; /* Cambia el color de fondo a negro */
-        display: flex;
-        flex-direction: column; /* Alinea los elementos en columna */
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Aprovecha toda la altura de la ventana */
-        color: white;
+    body {
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .explosion {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      animation: explode 2s ease-in-out infinite;
+    }
+
+    @keyframes explode {
+      0% {
+        width: 100px;
+        height: 100px;
+        transform: scale(1);
+        background: #ff5733;
       }
-      
-      .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin-top: 20px;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 96px;
-  height: 96px;
-  margin: 12px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* Estilo para la imagen */
-     .my-image {
-        position: absolute;
-        top: 20px; /* Ajusta la posición vertical de la imagen */
-        left: 50%; /* Alinea la imagen horizontalmente al centro */
-        transform: translateX(-50%); /* Centra la imagen horizontalmente */
+      50% {
+        width: 200px;
+        height: 200px;
+        transform: scale(1.5);
+        background: #33ff57;
       }
+      100% {
+        width: 100px;
+        height: 100px;
+        transform: scale(1);
+        background: #5733ff;
+      }
+    }
+
+    .text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 36px;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
   </style>
 </head>
 <body>
-   
-    <p style="margin-top: 25px; color: white; font-size: 40px;">Bienvenido a INCAIRA.</p>
-    <p style="margin-top: 25px; color: white; font-size: 30px;">Estamos preparando tu sorpresa, en unos segundos estará lista.</p>
-  
-    <img src="8.png" alt="INCAIRA" width="300" height="300" class="my-image">
-  
-  
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  <div class="explosion"></div>
+  <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
   
   <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxPhOXwhukaUo5RHu_9mihOcnusGRpwQXClT4xHWMlQuZBPs9GsFEZjzGmAQ_3COJwlUg/exec";
