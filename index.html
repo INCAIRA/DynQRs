@@ -55,6 +55,14 @@
       animation: typing 2s steps(40) forwards, blink 1s step-end infinite;
 
     }
+    @keyframes blink-border {
+  0%, 100% {
+    border-color: transparent; /* Borde transparente al inicio y al final */
+  }
+  50% {
+    border-color: #fff; /* Borde blanco en la mitad del tiempo */
+  }
+}
 
     /* Animación para que el texto se muestre como si se escribiera */
     @keyframes typing {
