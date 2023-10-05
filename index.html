@@ -44,7 +44,7 @@
       position: relative;
     }
 
-    /* Texto que se muestra como si se escribiera */
+    /* Texto que se muestra como si se escribiera en 2 segundos */
     .text {
       font-size: 36px;
       white-space: nowrap;
@@ -52,17 +52,8 @@
       border-right: 2px solid #fff;
       padding-right: 10px;
       width: 0; /* Inicialmente sin ancho */
-      animation: typing 2s steps(40) forwards, blink 1s step-end infinite;
-
+      animation: typing 2s steps(40) forwards, blink-border 1s step-end infinite;
     }
-    @keyframes blink-border {
-  0%, 100% {
-    border-color: transparent; /* Borde transparente al inicio y al final */
-  }
-  50% {
-    border-color: #fff; /* Borde blanco en la mitad del tiempo */
-  }
-}
 
     /* Animación para que el texto se muestre como si se escribiera */
     @keyframes typing {
@@ -71,6 +62,16 @@
       }
       to {
         width: 100%;
+      }
+    }
+
+    /* Animación para que el borde derecho parpadee */
+    @keyframes blink-border {
+      0%, 100% {
+        border-color: transparent; /* Borde transparente al inicio y al final */
+      }
+      50% {
+        border-color: #fff; /* Borde blanco en la mitad del tiempo */
       }
     }
   </style>
