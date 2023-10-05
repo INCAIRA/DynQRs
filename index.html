@@ -17,33 +17,46 @@
       overflow: hidden;
     }
 
+    .explosion {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(45deg, #ff5733, #33ff57, #5733ff, #ff5733);
+      background-size: 400% 400%;
+      animation: explode 3s linear infinite;
+    }
+
+    @keyframes explode {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
     .text {
       text-align: center;
       font-size: 36px;
-      white-space: nowrap; /* Evita el salto de línea en el texto */
-      overflow: hidden; /* Oculta el contenido que desborda */
-      border-right: 2px solid #fff; /* Efecto de máquina de escribir */
-      padding-right: 10px; /* Espacio para el efecto de máquina de escribir */
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      padding-right: 10px;
+      animation: typing 4s steps(40) infinite;
     }
 
-    /* Animación de máquina de escribir */
     @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    .text::after {
-      content: '|'; /* Cursor de máquina de escribir */
-      animation: blink 1s steps(1) infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1 }
-      50% { opacity: 0 }
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="explosion"></div>
   <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
 
   <script>
