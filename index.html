@@ -60,17 +60,30 @@
       }
     }
 
-    /* Elimino el estilo del cursor */
     .cursor {
-      display: none;
+      display: inline-block;
+      width: 8px;
+      height: 36px;
+      background-color: #fff;
+      animation: blink 1s infinite; /* Simplifico la animación del cursor */
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="square"></div>
   <div class="text-container">
-    <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
+    <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.<span class="cursor"></span></p>
   </div>
+
 
 
 
