@@ -47,7 +47,7 @@
       overflow: hidden;
       border-right: 2px solid #fff;
       padding-right: 10px;
-      animation: typing 4s steps(40) forwards, blink 1s step-end infinite;
+      animation: typing 4s steps(40) forwards;
     }
 
     @keyframes typing {
@@ -57,6 +57,14 @@
       to {
         width: 100%;
       }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 36px;
+      background-color: #fff;
+      animation: blink 1s step-end infinite;
     }
 
     @keyframes blink {
@@ -74,6 +82,7 @@
   <div class="text-container">
     <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.<span class="cursor"></span></p>
   </div>
+
 
   <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxPhOXwhukaUo5RHu_9mihOcnusGRpwQXClT4xHWMlQuZBPs9GsFEZjzGmAQ_3COJwlUg/exec";
