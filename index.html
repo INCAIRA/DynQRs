@@ -55,9 +55,13 @@
     @keyframes blink {
       0%, 100% {
         opacity: 1;
+        color: #ff00ff;
+        text-shadow: 2px 2px 5px #ff00ff;
       }
       50% {
-        opacity: 0;
+        opacity: 0.5;
+        color: #00ffff;
+        text-shadow: 2px 2px 5px #00ffff;
       }
     }
 
@@ -65,18 +69,17 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background-image: radial-gradient(white, transparent 50%);
-      background-size: 3px 3px;
-      z-index: -1;
-      animation: particles 1s linear infinite;
+      background-image: radial-gradient(circle, #ff5733, #33ff57, #5733ff);
+      background-size: 200% 200%;
+      animation: particles 3s linear infinite;
     }
 
     @keyframes particles {
       0% {
-        transform: translate(0, 0);
+        background-position: 0% 0%;
       }
       100% {
-        transform: translate(100px, 100px);
+        background-position: 100% 100%;
       }
     }
   </style>
@@ -85,7 +88,6 @@
   <div class="particles"></div>
   <div class="explosion"></div>
   <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
-
   
   <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxPhOXwhukaUo5RHu_9mihOcnusGRpwQXClT4xHWMlQuZBPs9GsFEZjzGmAQ_3COJwlUg/exec";
