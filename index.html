@@ -52,7 +52,7 @@
       border-right: 2px solid #fff;
       padding-right: 10px;
       width: 0; /* Inicialmente sin ancho */
-      animation: typing 4s steps(40) forwards;
+      animation: typing 4s steps(40) forwards, blink 1s step-end infinite;
     }
 
     /* Animación para que el texto se muestre como si se escribiera */
@@ -71,7 +71,7 @@
       width: 8px;
       height: 36px;
       background-color: #fff;
-      animation: blink 1s steps(1) infinite; /* Cursor parpadeante */
+      animation: blink 1s step-end infinite; /* Cursor parpadeante */
     }
 
     /* Animación para hacer que el cursor parpadee */
@@ -91,7 +91,7 @@
     <!-- Texto que se mostrará como si se escribiera -->
     <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.<span class="cursor"></span></p>
   </div>
-</body>
+
 
   <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxPhOXwhukaUo5RHu_9mihOcnusGRpwQXClT4xHWMlQuZBPs9GsFEZjzGmAQ_3COJwlUg/exec";
