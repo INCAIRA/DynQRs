@@ -54,7 +54,6 @@
       width: 0; /* Inicialmente sin ancho */
       animation: typing 2s steps(40) forwards, blink-border 1s step-end infinite;
       box-sizing: border-box; /* Asegura que el borde esté dentro del ancho */
-      padding-top: 40px; /* Añade un espacio superior para separar la imagen del texto */
     }
 
     /* Animación para que el texto se muestre como si se escribiera */
@@ -95,34 +94,29 @@
     <!-- Texto que se mostrará como si se escribiera en 2 segundos -->
     <p class="text">Si todo tardara tan poco en cargar, la vida sería mejor.</p>
   </div>
-  
+</body>
+</html>
+
   <script>
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxPhOXwhukaUo5RHu_9mihOcnusGRpwQXClT4xHWMlQuZBPs9GsFEZjzGmAQ_3COJwlUg/exec";
     
     var url = document.location.href;
     var k = url.substr(url.lastIndexOf("k=")+2);
     
-    if (k) {
-      // Esperar a que el texto se muestre completamente antes de solicitar la contraseña
-      var textElement = document.querySelector(".text");
-      textElement.addEventListener("animationend", function() {
-        // Aquí puedes definir la contraseña requerida
-        var password = "tucontraseña";
-        
-        // Pide la contraseña al usuario
-        var userPassword = prompt("Por favor, ingresa la contraseña:");
-        
-        // Verifica si la contraseña es correcta
-        if (userPassword === password) {
-          fetch(AS_URL_BASE+'?k='+k)
-            .then(r => r.text())
-            .then((r) => {
-              console.log(r);
-              if (r) {
-                document.location.replace(r);
-              }
-            })
-            .catch(err => console.log(err));
-        } else {
-          alert("Contraseña incorrecta. El acceso está restringido.");
+    if(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r => r.text())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r){
+          document.location.replace(r);
         }
+      })
+      .catch(err => console.log(err))
+    }
+
+  </script>
+    
+</body>
+</html>
